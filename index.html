@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ExifInfo</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/xml" href="https://raw.githubusercontent.com/atenaxx1412/A_imgs/refs/heads/main/icon.svg">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/atenaxx1412/A_imgs/refs/heads/main/icon-16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/atenaxx1412/A_imgs/refs/heads/main/icon-32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/atenaxx1412/A_imgs/refs/heads/main/icon.svg">
+    </head>
+    <body>
+        <div class="container">
+            <h1>写真EXIF情報表示</h1>
+            
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <div class="upload-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>写真をアップロード</h3>
+                        <p>ファイルをドラッグ&ドロップするか、下のボタンをクリックしてください</p>
+                        <button type="button" class="upload-button" id="uploadButton">
+                            <i class="fas fa-file-upload"></i>
+                            ファイルを選択
+                        </button>
+                        <input type="file" id="fileInput" accept="image/*,.heic,.heif,.dng,.cr2,.cr3,.nef,.arw,.raf,.rw2,.orf,.pef,.srw,.3fr,.fff,.iiq,.rwl,.raw" multiple style="display: none;">
+                        <div class="supported-formats">
+                            <small>対応形式: JPEG, PNG, HEIC, WebP, RAW形式など</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features-info">
+                    <h4>分析項目</h4>
+                    <ul>
+                        <li><i class="fas fa-camera"></i> メーカー・機種</li>
+                        <li><i class="fas fa-clock"></i> 撮影日時</li>
+                        <li><i class="fas fa-map-marker-alt"></i> GPS座標・高度</li>
+                        <li><i class="fas fa-map"></i> Google Map連携</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="image-preview" id="imagePreview"></div>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/exif-js@2.3.0/exif.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+        <script src="exifInfo.min.js"></script>
+    </body>
+</html>
